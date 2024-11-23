@@ -1,26 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello World</title>
+    <title>Random Facts Generator</title>
     <style>
         body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #ff7e5f, #feb47b);
+            color: #fff;
             text-align: center;
-            padding: 50px;
-            background: #f5f5f5;
+            padding: 20px;
         }
-        h1 {
-            color: #4CAF50;
+
+        #fact {
+            font-size: 2em;
+            max-width: 600px;
+            line-height: 1.5;
         }
-        p {
-            font-size: 20px;
-            color: #333;
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.8em;
+            color: #ffe;
         }
     </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my interactive website. Click the button below for a surprise!</p>
-    <button onclick="alert('Hello from Porkbun! 🎉')">Click Me</button>
+    <div>
+        <div id="fact">Loading a fun fact...</div>
+        <footer>Powered by Random Facts 🌍</footer>
+    </div>
+    
+    <script>
+        const facts = [
+            "Bananas are berries, but strawberries are not!",
+            "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs.",
+            "Octopuses have three hearts and blue blood.",
+            "Sharks existed before trees!",
+            "Cows have best friends and get stressed when they are separated.",
+            "A day on Venus is longer than a year on Venus.",
+            "There are more stars in the universe than grains of sand on Earth.",
+            "Sloths can hold their breath longer than dolphins—up to 40 minutes.",
+            "Wombat poop is cube-shaped to mark their territory and prevent rolling away.",
+            "The shortest war in history lasted 38 minutes between Britain and Zanzibar.",
+            "A cloud can weigh over a million pounds!",
+            "Humans share about 60% of their DNA with bananas.",
+            "Butterflies can taste with their feet.",
+            "The longest hiccuping spree lasted 68 years.",
+            "The inventor of the Pringles can is buried in one.",
+            "Pineapples take about two years to grow.",
+            "A bolt of lightning is five times hotter than the surface of the sun.",
+            "The smell of freshly cut grass is actually a plant distress signal.",
+            "Kangaroos can't walk backward.",
+            "The Eiffel Tower can grow taller in the summer due to heat.",
+            "Goldfish can distinguish between different kinds of music.",
+            "The heart of a blue whale is the size of a small car.",
+            "Horses and cows sleep while standing up.",
+            "Bees can recognize human faces.",
+            "There's a species of jellyfish that can live forever under the right conditions.",
+            "You can't hum while holding your nose.",
+            "Some cats are allergic to humans.",
+            "Elephants are the only animals that can't jump.",
+            "Apples float because they are 25% air.",
+            "A single strand of spaghetti is called a 'spaghetto.'"
+        ];
+
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+
+        // Show a new fact every 5 seconds
+        setInterval(showRandomFact, 5000);
+        showRandomFact(); // Show one immediately on load
+    </script>
 </body>
 </html>
